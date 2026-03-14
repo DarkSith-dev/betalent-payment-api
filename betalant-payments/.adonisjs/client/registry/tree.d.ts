@@ -18,6 +18,7 @@ export interface ApiDefinition {
   }
   payments: {
     store: typeof routes['payments.store']
+    refund: typeof routes['payments.refund']
   }
   products: {
     index: typeof routes['products.index']

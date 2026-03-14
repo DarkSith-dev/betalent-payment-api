@@ -319,4 +319,16 @@ export interface Registry {
       errorResponse: unknown
     }
   }
+  'payments.refund': {
+    methods: ["POST"]
+    pattern: '/api/v1/payments/refund/:id'
+    types: {
+      body: {}
+      paramsTuple: [ParamValue]
+      params: { id: ParamValue }
+      query: {}
+      response: unknown
+      errorResponse: unknown
+    }
+  }
 }

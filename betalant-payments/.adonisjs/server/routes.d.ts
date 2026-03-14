@@ -30,6 +30,7 @@ export type ScannedRoutes = {
     'gateways.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'gateways.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'gateways.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'payments.refund': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   GET: {
     'profile.profile.show': { paramsTuple?: []; params?: {} }
@@ -69,6 +70,7 @@ export type ScannedRoutes = {
     'products.store': { paramsTuple?: []; params?: {} }
     'clients.store': { paramsTuple?: []; params?: {} }
     'gateways.store': { paramsTuple?: []; params?: {} }
+    'payments.refund': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   PUT: {
     'products.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }

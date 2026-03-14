@@ -50,6 +50,38 @@ export default class PaymentService {
       })
     }
 
+    
+
+
     return transaction
   }
+
+  
+async refundPayment(transactionId: number) {
+  const transaction = await Transaction.findOrFail(transactionId)
+
+  if (!transaction.gatewayId || !transaction.externalId) {
+        throw new Error('Transaction has no gateway')
+      }
+
+      const gateway = await import('#models/gateway').then(m => m.default)
+
+      const gw = await gateway.findOrFail(transaction.gatewayId)
+
+      const result = await this.gatewayManager.refund(
+        gw.name,
+        transaction.externalId
+      )
+
+    if (!result.success) {
+      throw new Error('Refund failed')
+    }
+
+      transaction.status = 'refunded'
+
+      await transaction.save()
+
+  return transaction
+}
+
 }

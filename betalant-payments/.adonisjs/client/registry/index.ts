@@ -162,6 +162,12 @@ const routes = {
     tokens: [{"old":"/api/v1/gateways/:id","type":0,"val":"api","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"gateways","end":""},{"old":"/api/v1/gateways/:id","type":1,"val":"id","end":""}],
     types: placeholder as Registry['gateways.destroy']['types'],
   },
+  'payments.refund': {
+    methods: ["POST"],
+    pattern: '/api/v1/payments/refund/:id',
+    tokens: [{"old":"/api/v1/payments/refund/:id","type":0,"val":"api","end":""},{"old":"/api/v1/payments/refund/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/payments/refund/:id","type":0,"val":"payments","end":""},{"old":"/api/v1/payments/refund/:id","type":0,"val":"refund","end":""},{"old":"/api/v1/payments/refund/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['payments.refund']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

@@ -1,7 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import PaymentService from '../Services/PaymentService.js'
 
-
 export default class PaymentsController {
   private paymentService = new PaymentService()
 
@@ -20,6 +19,21 @@ export default class PaymentsController {
     } catch (error) {
       return response.badRequest({
         message: 'Payment error',
+        error,
+      })
+    }
+  }
+
+  async refund({ params, response }: HttpContext) {
+    try {
+      const transactionId = params.id
+
+      const result = await this.paymentService.refundPayment(transactionId)
+
+      return response.ok(result)
+    } catch (error) {
+      return response.badRequest({
+        message: 'Refund error',
         error,
       })
     }
