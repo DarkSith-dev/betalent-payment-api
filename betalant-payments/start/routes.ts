@@ -97,6 +97,19 @@ router
       )
       .use(middleware.role(['ADMIN', 'FINANCE']))
 
+    router
+      .patch(
+         'gateways/:id/toggle',
+         [GatewaysController, 'toggle']
+     )
+       .use(middleware.role(['ADMIN']))
 
+
+    router
+       .patch(
+        'gateways/:id/priority',
+         [GatewaysController, 'setPriority']
+      )
+      .use(middleware.role(['ADMIN']))  
   })
   .prefix('/api/v1')

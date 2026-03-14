@@ -2,6 +2,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 import Gateway from '#models/gateway'
 
 export default class GatewaysController {
+
   async index() {
     return await Gateway.all()
   }
@@ -36,6 +37,35 @@ export default class GatewaysController {
     return gateway
   }
 
+
+  // ✅ ativar / desativar
+
+  async toggle({ params }: HttpContext) {
+    const gateway = await Gateway.findOrFail(params.id)
+
+    gateway.isActive = !gateway.isActive
+
+    await gateway.save()
+
+    return gateway
+  }
+
+
+
+
+  async setPriority({ params, request }: HttpContext) {
+    const gateway = await Gateway.findOrFail(params.id)
+
+    const { priority } = request.body()
+
+    gateway.priority = priority
+
+    await gateway.save()
+
+    return gateway
+  }
+
+
   async destroy({ params }: HttpContext) {
     const gateway = await Gateway.findOrFail(params.id)
 
@@ -43,4 +73,5 @@ export default class GatewaysController {
 
     return { message: 'deleted' }
   }
+
 }
