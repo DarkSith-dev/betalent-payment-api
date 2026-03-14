@@ -3,6 +3,8 @@ import router from '@adonisjs/core/services/router'
 import { controllers } from '#generated/controllers'
 import PaymentsController from '#controllers/payments_controller'
 import ProductsController from '#controllers/products_controller'
+import ClientsController from '#controllers/clients_controller'
+import GatewaysController from '#controllers/gateways_controller'
 
 router.get('/', () => {
   return { hello: 'world' }
@@ -34,6 +36,12 @@ router
     router.post('payments', [PaymentsController, 'store'])
 
     router.resource('products', ProductsController)
+
+    router.resource('clients', ClientsController)
+
+    router.resource('gateways', GatewaysController)
+
+    
 
   })
   .prefix('/api/v1')

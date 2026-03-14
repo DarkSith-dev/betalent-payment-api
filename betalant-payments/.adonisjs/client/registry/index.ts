@@ -78,6 +78,90 @@ const routes = {
     tokens: [{"old":"/api/v1/products/:id","type":0,"val":"api","end":""},{"old":"/api/v1/products/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/products/:id","type":0,"val":"products","end":""},{"old":"/api/v1/products/:id","type":1,"val":"id","end":""}],
     types: placeholder as Registry['products.destroy']['types'],
   },
+  'clients.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/clients',
+    tokens: [{"old":"/api/v1/clients","type":0,"val":"api","end":""},{"old":"/api/v1/clients","type":0,"val":"v1","end":""},{"old":"/api/v1/clients","type":0,"val":"clients","end":""}],
+    types: placeholder as Registry['clients.index']['types'],
+  },
+  'clients.create': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/clients/create',
+    tokens: [{"old":"/api/v1/clients/create","type":0,"val":"api","end":""},{"old":"/api/v1/clients/create","type":0,"val":"v1","end":""},{"old":"/api/v1/clients/create","type":0,"val":"clients","end":""},{"old":"/api/v1/clients/create","type":0,"val":"create","end":""}],
+    types: placeholder as Registry['clients.create']['types'],
+  },
+  'clients.store': {
+    methods: ["POST"],
+    pattern: '/api/v1/clients',
+    tokens: [{"old":"/api/v1/clients","type":0,"val":"api","end":""},{"old":"/api/v1/clients","type":0,"val":"v1","end":""},{"old":"/api/v1/clients","type":0,"val":"clients","end":""}],
+    types: placeholder as Registry['clients.store']['types'],
+  },
+  'clients.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/clients/:id',
+    tokens: [{"old":"/api/v1/clients/:id","type":0,"val":"api","end":""},{"old":"/api/v1/clients/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/clients/:id","type":0,"val":"clients","end":""},{"old":"/api/v1/clients/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['clients.show']['types'],
+  },
+  'clients.edit': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/clients/:id/edit',
+    tokens: [{"old":"/api/v1/clients/:id/edit","type":0,"val":"api","end":""},{"old":"/api/v1/clients/:id/edit","type":0,"val":"v1","end":""},{"old":"/api/v1/clients/:id/edit","type":0,"val":"clients","end":""},{"old":"/api/v1/clients/:id/edit","type":1,"val":"id","end":""},{"old":"/api/v1/clients/:id/edit","type":0,"val":"edit","end":""}],
+    types: placeholder as Registry['clients.edit']['types'],
+  },
+  'clients.update': {
+    methods: ["PUT","PATCH"],
+    pattern: '/api/v1/clients/:id',
+    tokens: [{"old":"/api/v1/clients/:id","type":0,"val":"api","end":""},{"old":"/api/v1/clients/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/clients/:id","type":0,"val":"clients","end":""},{"old":"/api/v1/clients/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['clients.update']['types'],
+  },
+  'clients.destroy': {
+    methods: ["DELETE"],
+    pattern: '/api/v1/clients/:id',
+    tokens: [{"old":"/api/v1/clients/:id","type":0,"val":"api","end":""},{"old":"/api/v1/clients/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/clients/:id","type":0,"val":"clients","end":""},{"old":"/api/v1/clients/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['clients.destroy']['types'],
+  },
+  'gateways.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/gateways',
+    tokens: [{"old":"/api/v1/gateways","type":0,"val":"api","end":""},{"old":"/api/v1/gateways","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways","type":0,"val":"gateways","end":""}],
+    types: placeholder as Registry['gateways.index']['types'],
+  },
+  'gateways.create': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/gateways/create',
+    tokens: [{"old":"/api/v1/gateways/create","type":0,"val":"api","end":""},{"old":"/api/v1/gateways/create","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways/create","type":0,"val":"gateways","end":""},{"old":"/api/v1/gateways/create","type":0,"val":"create","end":""}],
+    types: placeholder as Registry['gateways.create']['types'],
+  },
+  'gateways.store': {
+    methods: ["POST"],
+    pattern: '/api/v1/gateways',
+    tokens: [{"old":"/api/v1/gateways","type":0,"val":"api","end":""},{"old":"/api/v1/gateways","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways","type":0,"val":"gateways","end":""}],
+    types: placeholder as Registry['gateways.store']['types'],
+  },
+  'gateways.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/gateways/:id',
+    tokens: [{"old":"/api/v1/gateways/:id","type":0,"val":"api","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"gateways","end":""},{"old":"/api/v1/gateways/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['gateways.show']['types'],
+  },
+  'gateways.edit': {
+    methods: ["GET","HEAD"],
+    pattern: '/api/v1/gateways/:id/edit',
+    tokens: [{"old":"/api/v1/gateways/:id/edit","type":0,"val":"api","end":""},{"old":"/api/v1/gateways/:id/edit","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways/:id/edit","type":0,"val":"gateways","end":""},{"old":"/api/v1/gateways/:id/edit","type":1,"val":"id","end":""},{"old":"/api/v1/gateways/:id/edit","type":0,"val":"edit","end":""}],
+    types: placeholder as Registry['gateways.edit']['types'],
+  },
+  'gateways.update': {
+    methods: ["PUT","PATCH"],
+    pattern: '/api/v1/gateways/:id',
+    tokens: [{"old":"/api/v1/gateways/:id","type":0,"val":"api","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"gateways","end":""},{"old":"/api/v1/gateways/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['gateways.update']['types'],
+  },
+  'gateways.destroy': {
+    methods: ["DELETE"],
+    pattern: '/api/v1/gateways/:id',
+    tokens: [{"old":"/api/v1/gateways/:id","type":0,"val":"api","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"v1","end":""},{"old":"/api/v1/gateways/:id","type":0,"val":"gateways","end":""},{"old":"/api/v1/gateways/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['gateways.destroy']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

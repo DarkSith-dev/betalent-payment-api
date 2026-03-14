@@ -28,4 +28,22 @@ export interface ApiDefinition {
     update: typeof routes['products.update']
     destroy: typeof routes['products.destroy']
   }
+  clients: {
+    index: typeof routes['clients.index']
+    create: typeof routes['clients.create']
+    store: typeof routes['clients.store']
+    show: typeof routes['clients.show']
+    edit: typeof routes['clients.edit']
+    update: typeof routes['clients.update']
+    destroy: typeof routes['clients.destroy']
+  }
+  gateways: {
+    index: typeof routes['gateways.index']
+    create: typeof routes['gateways.create']
+    store: typeof routes['gateways.store']
+    show: typeof routes['gateways.show']
+    edit: typeof routes['gateways.edit']
+    update: typeof routes['gateways.update']
+    destroy: typeof routes['gateways.destroy']
+  }
 }
